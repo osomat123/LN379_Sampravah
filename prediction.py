@@ -1,38 +1,35 @@
-x, y, x2, n, xy = 0, 0, 0, 0, 0
+from datetime import datetime, timedelta
 
-# Taking height of dam and time interval bm values from user
-val = eval(input("Enter time interval bw 2 readings(in min) "))
-h = eval(input("Enter height of dam "))
 
-print("Starting prediction")
-print("Press Enter after entering each water level(in m)")
-print("Enter -1 anytime to exit")
+def floodPredict(data, timestamp):
+    # Converting Passed Objects into Arrays with key
+    enumerate(data)
+    enumerate(timestamp)
 
-while(1):
+    h = 53  # Height of Dam in cm
+    x, y, x2, n, xy = 0, 0, 0, 0, 0
+    d0 = timestamp[0]  # Base Time ie of first Water Level Data
 
-    level = eval(input())
-    if(level == -1):
-        break
+    for i in range(0, 50):
 
-    # Manipulating variables used for calculation of reression
-    n += 1
-    time = val*n
-    y += level
-    x += time
-    x2 += time*time
-    xy += time*level
+        level = data[i]
 
-    # Regression cant work on one input we need atleast two
-    if(n == 1):
-        print("Enter Next Reading")
+        # Manipulating variables used for calculation of reression
+        n += 1
+        d1 = timestamp[i]
+        t = d1 - d0
+        time = int(t.total_seconds())
+        y += level
+        x += time
+        x2 += time*time
+        xy += time*level
 
-    #
-    else:
+    d = n*x2 - x*x
+    c = (y*x2 - x*xy)/d
+    m = (n*xy - x*y)/d
 
-        d = n*x2 - x*x
-        a = (y*x2 - x*xy)/d
-        b = (n*xy - x*y)/d
-
-        # rem is the time after which water level will reach 100% FRL
-        rem = int((h-a)/b - time)
-        print(rem, "Min till the dam is full")
+    # rem1 is the time after which water level will reach 100% FRL
+    rem1 = int((h-c)/m - time)
+    # rem2 is the time after which water level will reach 75% FRL
+    rem2 = int((0.75*h-c)/m - time)
+    return(level, rem1, rem2)
