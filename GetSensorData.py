@@ -1,15 +1,16 @@
 import requests
 import time
+import math
 import json
+
 import conf
 from boltiot import Bolt
-
-mybolt = Bolt(conf.api_key,conf.device_id)
-mybolt.serialBegin('9600')
 
 def getSensorValue():
 #Returns Sensor Value. Returns -999 if fails
 
+	mybolt = Bolt(conf.api_key,conf.device_id)
+	mybolt.serialBegin('9600')
 
 	try:
 		response = mybolt.serialRead("10")
@@ -27,15 +28,5 @@ def getSensorValue():
 		print("Something went wrong. Response from BOLT:")
 		print(e)
 		return -999
-while True:
 
-	sensor_value = getSensorValue()
-
-	if sensor_value == -999:
-		print("Request was unsuccessful! Skipping")
-		continue
-
-	print("Sensor Value: ",sensor_value)
-
-	time.sleep(5)
 
