@@ -18,5 +18,5 @@ void loop() {
   distanceCm = duration * 0.0340 / 2;
   //distanceInch = duration * 0.01330 / 2;
   Serial.println(distanceCm);
-  delay(10000);
+  delay(5000);
 }
