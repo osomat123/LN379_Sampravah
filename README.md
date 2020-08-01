@@ -12,6 +12,6 @@ Ratnanjali Satsangi
 
 Agam Swami
 
-Amol Satsangi
+Amol Satsangi.
 
 Mahima
