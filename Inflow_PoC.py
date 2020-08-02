@@ -5,7 +5,7 @@ def inflowfuncformodel(weir, timestamp):
 
     enumerate(weir)
     enumerate(timestamp)
-    height, area = 53, 81.25
+    height, area = 53, 960
     h, q, time, prev = 0, 0, 0, 0
     x, y, x2, n, xy = 0, 0, 0, 0, 0
     m, c, d = 0, 0, 0
@@ -18,7 +18,8 @@ def inflowfuncformodel(weir, timestamp):
         dur = timestamp[i+1]-timestamp[i]
         sec = int(dur.total_seconds())
         q = h/sec
-        if(prev > q ^ case):
+        inflow.append(q)
+        if (prev > q) ^ case:
             case = not case
             d0 = timestamp[i-1]
             x, y, x2, n, xy = 0, prev, 0, 1, 0

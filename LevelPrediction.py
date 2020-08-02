@@ -2,8 +2,7 @@ from datetime import datetime, timedelta
 import requests
 import json
 
-
-def floodPredict(data, timestamp):
+def weatherAPI():
 
     # Weather Variables
     json, adj1, adj2 = 0, 0, 0
@@ -20,21 +19,28 @@ def floodPredict(data, timestamp):
     if x["cod"] == "200":
         y = x["list"]
         json = 1
-    # Adjustment of Result According to Rain
 
-    def rainyDay():
-        curr_dt = datetime.now()
-        for j in range(0, 40):
-            z = y[j]
-            dt_obj = datetime.strptime(z["dt_txt"], "%Y-%m-%d %H:%M:%S")
-            if(curr_dt+timedelta(seconds=rem1) < dt_obj):
-                if("rain" in z):
-                    a = z["rain"]
-                    adj1 += a["3h"]
-                    if(curr_dt+timedelta(seconds=rem2) < dt_obj):
-                        adj2 += z["rain"]["3h"]
-        rem1 -= int(0.1*adj1/m)
-        rem2 -= int(0.1*adj2/m)
+    return y
+
+# Adjustment of Result According to Rain
+
+def rainyDay(rem1,rem2,weather,m):
+    adj1, adj2 = 0,0
+    curr_dt = datetime.now()
+    for j in range(0, 40):
+        z = weather[j]
+        dt_obj = datetime.strptime(z["dt_txt"], "%Y-%m-%d %H:%M:%S")
+        if(curr_dt+timedelta(seconds=rem1) < dt_obj):
+            if("rain" in z):
+                a = z["rain"]
+                adj1 += a["3h"]
+                if(curr_dt+timedelta(seconds=rem2) < dt_obj):
+                    adj2 += z["rain"]["3h"]
+    rem1 -= int(0.1*adj1/m)
+    rem2 -= int(0.1*adj2/m)
+
+
+def floodPredict(data, timestamp, weather):
 
     # Converting Passed Objects ---> Arrays with key
     enumerate(data)
@@ -48,7 +54,7 @@ def floodPredict(data, timestamp):
     for i in range(0, 50):
         level = data[i]
         # Switching b/w Rising and Falling
-        if(prev > level ^ case):
+        if (prev > level) ^ case:
             case = not case
             d0 = timestamp[i-1]
             x, y, x2, n, xy = 0, prev, 0, 1, 0
@@ -68,7 +74,7 @@ def floodPredict(data, timestamp):
     m = (n*xy - x*y)/d
 
     # Water Level Rising
-    if(case == 0):
+    if(case == False):
         # rem1 is the time after which water level will reach 100% FRL
         rem1 = int((h-c)/m - time)
         # rem2 is the time after which water level will reach 75% FRL
@@ -80,6 +86,6 @@ def floodPredict(data, timestamp):
         # rem2 is the time after which water level will decrease by 10% of FRL
         rem2 = int((level-0.1*h-c)/m - time)
 
-    rainyDay()  # Function Call for Rain Adjustments
+    #rainyDay(rem1,rem2,weather)  # Function Call for Rain Adjustments
 
     return(level, rem1, rem2, case)

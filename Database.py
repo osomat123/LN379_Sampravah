@@ -1,7 +1,7 @@
 import mysql.connector
 from datetime import datetime
 
-def InsertIntoTable(data,table):
+def InsertIntoTable(data,table,timestamp=0):
     mydb=mysql.connector.connect(host='localhost',
                                  user='root',
                                  password='steelchair111',
@@ -11,8 +11,11 @@ def InsertIntoTable(data,table):
 
     cur=mydb.cursor()
 
-    if table == 'SensorData' or table == 'People':
+    if table == 'SensorData' or table == 'People' or table == 'InflowSlope':
         query = "INSERT INTO {} VALUES (NOW(),{})".format(table,value)
+
+    elif table == 'Inflow':
+        query = "INSERT INTO {} VALUES ('{}',{})".format(table,timestamp,value)
 
     else:
         value = "'"+value+"'"
@@ -42,4 +45,4 @@ def ExtractFromTable(table):
         timestamp.append(r[0])
         data.append(r[1])
 
-    return (data,timestamp) 
+    return (data,timestamp)
