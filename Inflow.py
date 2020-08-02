@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 
-def floodPredict(weir, timestamp):
+def inflowfunc(weir, timestamp):
 
     enumerate(weir)
     enumerate(timestamp)
