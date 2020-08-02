@@ -16,7 +16,7 @@ def floodPredict(weir, timestamp):
 
         h = (weir[i+1]-weir[i])*area
         dur = timestamp[i+1]-timestamp[i]
-        sec = int(t.total_seconds())
+        sec = int(dur.total_seconds())
         q = h/sec
         if(prev > q ^ case):
             case = not case
