@@ -1,29 +1,52 @@
 # LN379_Sampravah
 
+<img src="/Screenshots/Diagrams/title.png">
+
 Repository created by Team Sampravah for SIH-2020
 
-Our Team Members are:
+# Team Members
+**insert picture here**
 
-Tejpunj Raju 
+# Mentors
+**insert slide**
 
-Arsh Kr Gupta
-
-Ratnanjali Satsangi
-
-Agam Swami
-
-Amol Satsangi
-
-Mahima
-
-We have developed a Real Time Decision Support System that helps dam officials to take quick decisions in the time of an emergency. Our project uses Linear Regression to predict the water level in the dam reservoir and also the inflow of water. It also uses State of the Art YOLOv3 Deep Learning Object Detection Framework to detect and inform the number of people stuck in high risk areas in the event of imminent flooding.
-
-Link to Final PPT: https://docs.google.com/presentation/d/1NR8QUCvvVnAIrW2F0SR5fOtUFcyi2sgmxDZVx3plV8k/edit?usp=sharing
+# Expert Consultants
+**insert slide**
 
 # Objective
-
 To develop an IoT based effective advance Public Address and Flood Warning System
 
-# Solution Stratergy
+# Solution Prototype
 
-<img src="Screenshots/Diagrams/SolnStratergy">
+<img src="Screenshots/Diagrams/FlowOfSystem.png">
+
+# Solution Strategy
+
+<img src="Screenshots/Diagrams/Stratergy.png">
+
+## Module 1: Water Level Sensing & Prediction
+
+<img src="Screenshots/Diagrams/1a.png">
+
+<img src="Screenshots/Diagrams/1b.png">
+
+<img src="Screenshots/Diagrams/1c.png">
+
+## Module 2: Computer Vision based Human Detection
+
+<img src="Screenshots/Diagrams/2a.png">
+
+<img src="Screenshots/Diagrams/2b.png">
+
+## Module 3: Web Dashboard & Public Warning System
+
+<img src="Screenshots/Diagrams/3a.png">
+
+<img src="Screenshots/Diagrams/3b.png">
+
+<img src="Screenshots/Diagrams/3c.png">
+
+# USPs
+
+<img src="Screenshots/Diagrams/USP.png">
+Link to Final PPT: https://docs.google.com/presentation/d/1NR8QUCvvVnAIrW2F0SR5fOtUFcyi2sgmxDZVx3plV8k/edit?usp=sharing
