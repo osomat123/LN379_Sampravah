@@ -4,6 +4,7 @@ import json
 
 def weatherAPI():
 
+
     # Weather Variables
     json, adj1, adj2 = 0, 0, 0
     # Weather Forecast Data Retrieval Area
@@ -40,7 +41,7 @@ def rainyDay(rem1,rem2,weather,m):
     rem2 -= int(0.1*adj2/m)
 
 
-def floodPredict(data, timestamp, weather):
+def floodPredict(data, timestamp,weather):
 
     # Converting Passed Objects ---> Arrays with key
     enumerate(data)
@@ -78,7 +79,8 @@ def floodPredict(data, timestamp, weather):
         # rem1 is the time after which water level will reach 100% FRL
         rem1 = int((h-c)/m - time)
         # rem2 is the time after which water level will reach 75% FRL
-        rem2 = int((0.9*h-c)/m - time)
+        rem2 = int((0.75*h-c)/m - time)
+
     # Water Level Falling
     else:
         # rem1 is the time after which water level will be half of current value

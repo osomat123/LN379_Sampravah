@@ -14,7 +14,7 @@ def InsertIntoTable(data,table,timestamp=0):
     if table == 'SensorData' or table == 'People' or table == 'InflowSlope':
         query = "INSERT INTO {} VALUES (NOW(),{})".format(table,value)
 
-    elif table == 'Inflow':
+    elif table == "Inflow":
         query = "INSERT INTO {} VALUES ('{}',{})".format(table,timestamp,value)
 
     else:
@@ -45,4 +45,4 @@ def ExtractFromTable(table):
         timestamp.append(r[0])
         data.append(r[1])
 
-    return (data,timestamp)
+    return (data,timestamp) 

@@ -26,7 +26,7 @@ if __name__ == "__main__":
                 time.sleep(10)
                 continue
             t_api = 0
-
+        time.sleep(1)
         sensor_value = getSensorValue()
 
         if sensor_value == -999:
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
         if sensor_value == '':
             t_api += 10
-            t_db += 10
+            t_db = 10
             time.sleep(10)
             continue
 
@@ -52,20 +52,21 @@ if __name__ == "__main__":
         data, timestamp = ExtractFromTable('SensorData')
 
         if len(data) < 50:
-            time.sleep(10)
+            t_api += 10
+            t_db += 10
             time.sleep(10)
             continue
 
-        level, timeToFSL, timeTo75 = floodPredict(data, timestamp)
-        InsertIntoTable(str(timedelta(seconds=timeToFSL)), 'RemTime')
+        level, rem1, rem2, case = floodPredict(data, timestamp, weather)
+        InsertIntoTable(str(timedelta(seconds=rem1)), 'RemTime')
 
         inflow, slope = inflowfuncformodel(data, timestamp)
 
         InsertIntoTable(slope, 'InflowSlope')
 
         print("Current Level: ", level)
-        print("Time to FSL: ", timedelta(seconds=timeToFSL))
-        print("Time to 75%: ", timedelta(seconds=timeTo75))
+        print("Time to FSL: ", timedelta(seconds=rem1))
+        print("Time to 75%: ", timedelta(seconds=rem2))
         print("\n")
 
         if t_db>500:

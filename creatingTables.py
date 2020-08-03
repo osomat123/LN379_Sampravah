@@ -18,3 +18,5 @@ def createtable():
     cur.execute(inflow)
     cur.execute(inflowSlope)
     mydb.commit()
+
+

@@ -12,6 +12,7 @@ def inflowfuncformodel(weir, timestamp):
     case = False
     inflow = []
     d0 = timestamp[0]
+
     for i in range(0, 49):
 
         h = (weir[i+1]-weir[i])*area
