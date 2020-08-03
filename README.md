@@ -2,6 +2,8 @@
 
 Repository created by Team Sampravah for SIH-2020
 
+Link to Final PPT: https://docs.google.com/presentation/d/1NR8QUCvvVnAIrW2F0SR5fOtUFcyi2sgmxDZVx3plV8k/edit?usp=sharing
+
 <img src="/Screenshots/Diagrams/title.png">
 
 # Team Members
@@ -66,11 +68,20 @@ To develop an IoT based effective advance Public Address and Flood Warning Syste
 
 ## Telegram Alert
 
-<img src="Screenshots/Dashboard/publicAddress.png">
+<p align = "center"><img src="Screenshots/PublicAddress/informOfficials.jpeg" height=800 width = 400> <img src="Screenshots/PublicAddress/informPublic.jpeg" height=800 width = 400></p>
+
+## SMS Alert
+
+<img src="Screenshots/PublicAddress/sms.jpeg" height=800 width = 400>
+
+## Email Alerts to Authorities, Police Stations and TV/Radio Stations
+
+<img src="Screenshots/PublicAddress/mail.PNG">
+
+## Twitter Alerts
+
+<img src="Screenshots/PublicAddress/twitter.png">
 
 ## Rescue Facilitation
 
 <img src="Screenshots/Node-Red/google-map.PNG">
-
-
-Link to Final PPT: https://docs.google.com/presentation/d/1NR8QUCvvVnAIrW2F0SR5fOtUFcyi2sgmxDZVx3plV8k/edit?usp=sharing
