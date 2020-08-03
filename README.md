@@ -72,15 +72,15 @@ To develop an IoT based effective advance Public Address and Flood Warning Syste
 
 ## SMS Alert
 
-<img src="Screenshots/PublicAddress/sms.jpeg" height=800 width = 400>
+<p align="center"><img src="Screenshots/PublicAddress/sms.jpeg" height=800 width = 400></p>
 
 ## Email Alerts to Authorities, Police Stations and TV/Radio Stations
 
-<img src="Screenshots/PublicAddress/mail.PNG">
+<p align="center"><img src="Screenshots/PublicAddress/mail.PNG"></p>
 
 ## Twitter Alerts
 
-<img src="Screenshots/PublicAddress/twitter.png">
+<p align="center"><img src="Screenshots/PublicAddress/twitter.png"></p>
 
 ## Rescue Facilitation
 
