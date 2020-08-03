@@ -16,6 +16,9 @@ if __name__ == "__main__":
     H = 53
     t_api = 901
     t_db = 501
+    device = '/dev/cu.usbmodem14201'
+    arduino = serial.Serial(device, '9600')
+
 
     while True:
 
@@ -27,7 +30,8 @@ if __name__ == "__main__":
                 continue
             t_api = 0
         time.sleep(1)
-        sensor_value = getSensorValue()
+        #sensor_value = getSensorValue()
+        sensor_value = sensorValue(arduino)
 
         if sensor_value == -999:
             print("Request was unsuccessful! Skipping")
