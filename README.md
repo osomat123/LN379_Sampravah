@@ -20,7 +20,10 @@ We have developed a Real Time Decision Support System that helps dam officials t
 
 Link to Final PPT: https://docs.google.com/presentation/d/1NR8QUCvvVnAIrW2F0SR5fOtUFcyi2sgmxDZVx3plV8k/edit?usp=sharing
 
-# Screenshots
-## Dam Model
-<p align='center'><img src="Screenshots/Dam%20Model/20200803_183937.jpg" width=400 height=360>  <img src="Screenshots/Dam%20Model/WhatsApp%20Image%202020-08-03%20at%2018.41.07.jpeg" width=360 height=360></p>
-## Dashboard
+# Objective
+
+To develop an IoT based effective advance Public Address and Flood Warning System
+
+# Solution Stratergy
+
+<img src="Screenshots/Diagrams/SolnStratergy">
